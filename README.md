@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+EasyModale
+EasyModale est un module npm qui permet de créer facilement une modale personnalisable pour votre application React.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Installation
+Pour installer EasyModale, vous pouvez utiliser npm en tapant la commande suivante :
 
-## Available Scripts
+css
+Copy code
+npm install --save easymodale
+Utilisation
+Importation
+Pour utiliser EasyModale dans votre application, vous devez l'importer dans votre fichier JavaScript ou TypeScript comme suit :
 
-In the project directory, you can run:
+javascript
+Copy code
+import EasyModale from 'easymodale';
+Utilisation
+Une fois que vous avez importé EasyModale, vous pouvez l'utiliser dans votre composant React. Voici un exemple d'utilisation :
 
-### `npm start`
+jsx
+Copy code
+import React, { useState } from 'react';
+import EasyModale from 'easymodale';
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+function MyComponent() {
+const [isModalOpen, setIsModalOpen] = useState(false);
+const show = () => {
+setIsModalOpen(true);
+};
+const closeModal = () => {
+setIsModalOpen(false);
+};
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+return (
+<div>
+<button onClick={() => show()}>Ouvrir la modale</button>
+<EasyModale
+        text="Ceci est le contenu de la modale."
+        isOpen={isModalOpen}
+        closeModal={closeModal}
+      />
+</div>
+);
+}
+Dans cet exemple, une modale est créée en utilisant EasyModale. La propriété text spécifie le contenu de la modale, isOpen spécifie si la modale est actuellement ouverte ou fermée, et closeModal est une fonction qui est appelée lorsque l'utilisateur ferme la modale.
 
-### `npm test`
+Options
+EasyModale prend en charge plusieurs options pour personnaliser l'apparence et le comportement de la modale. Voici la liste des options disponibles :
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+text
+Le contenu de la modale. Cela peut être du texte brut, du HTML ou n'importe quel autre contenu.
 
-### `npm run build`
+isOpen
+Un booléen qui indique si la modale est actuellement ouverte ou fermée.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+closeModal
+Une fonction qui est appelée lorsque l'utilisateur ferme la modale.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+animated1
+Un booléen qui indique si la modale doit afficher une animation de texte apparaissant.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+animated2
+Un booléen qui indique si la modale doit afficher une animation de texte tapé au clavier.
 
-### `npm run eject`
+animated3
+Un booléen qui indique si la modale doit afficher une animation de texte défilant.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+typingSpeed
+La vitesse à laquelle le texte est tapé lors de l'animation de texte tapé au clavier. La valeur par défaut est de 50 millisecondes.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Conclusion
+EasyModale est un module npm simple et facile à utiliser qui vous permet de créer rapidement et facilement une modale personnalisable pour votre application React. Avec les nombreuses options disponibles, vous pouvez personnaliser facilement l'apparence et le comportement de votre modale pour répondre à vos besoins spécifiques.

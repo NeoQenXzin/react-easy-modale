@@ -1,0 +1,211 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.modale-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.839);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modale-content {
+  color: brown;
+  min-height: 25vh;
+  width: 60vw;
+  background: rgb(255, 255, 255);
+  border-radius: 12px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modale-close {
+  cursor: pointer;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 10px;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+  background-color: rgba(165, 42, 42, 0.256);
+  border-radius: 4px;
+  z-index: 10;
+}
+.modale-close:hover {
+  background: rgba(165, 42, 42, 0.856);
+  color: rgba(255, 255, 255, 0.518);
+}
+
+@media screen and (max-width: 762px) {
+  .modale-close {
+    top: 5px;
+    right: 10px;
+  }
+  .modale-text {
+    font-size: 1.5rem;
+    font-family: "poppin", cursive;
+  }
+}
+
+/* Animation text modale  */
+
+.modale-text {
+  font-size: 1.7rem;
+  font-family: "poppin", cursive;
+  overflow: hidden;
+  /* padding: 50px; */
+  /* white-space: nowrap; */
+  max-width: 90%;
+  position: relative;
+}
+.modale-text-animated {
+  animation: apparition 0.3s ease-in-out;
+}
+
+@keyframes apparition {
+  0% {
+    opacity: 5%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+.modale-text-typing {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 0.15em solid orange;
+  animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+  text-align: center;
+}
+.modale-text-typing {
+  display: inline-block;
+  height: auto;
+  overflow: hidden;
+  padding-right: 1px;
+  /* white-space: nowrap; */
+  border-right: 0.15em solid orange;
+  animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
+}
+
+/* scroll */
+
+.modale-content.modale-text-scroll {
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+  width: 50%;
+  /* max-width: 90vw; */
+  /* display: block;
+  margin: 40px auto;
+  max-width: 640px;
+  height: 60px; */
+}
+
+.modale-content.modale-text-scroll .modale-text {
+  position: absolute;
+  min-width: 100%; /* au minimum la largeur du conteneur */
+}
+.modale-content.modale-text-scroll div span,
+.modale-content.modale-text-scroll div:after {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+  top: 0;
+}
+/* 
+.modale-content.modale-text-scroll div span {
+  animation: defilement 10s infinite linear;
+}
+
+.modale-content.modale-text-scroll div:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: attr(data-text);
+  animation: defilement2 10s infinite linear;
+} */
+
+/* @keyframes defilement {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -100%;
+  }
+}
+
+@keyframes defilement2 {
+  0% {
+    margin-left: 100%;
+  }
+  100% {
+    margin-left: 0%;
+  }
+}
+
+.modale-content.modale-text-scroll {
+  position: relative;
+  overflow: hidden;
+}
+
+.modale-content.modale-text-scroll span {
+  position: absolute;
+  display: inline-block;
+  white-space: nowrap;
+} */
+
+.modale-content.modale-text-scroll span:first-of-type {
+  animation: scroll-left 10s linear infinite;
+}
+
+.modale-content.modale-text-scroll span:last-of-type {
+  left: 100%;
+  animation: scroll-right 10s linear infinite;
+}
+
+@keyframes scroll-left {
+  from {
+    left: 0;
+  }
+  to {
+    left: -100%;
+  }
+}
+
+@keyframes scroll-right {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 0;
+  }
+}
