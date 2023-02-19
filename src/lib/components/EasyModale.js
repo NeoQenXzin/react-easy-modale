@@ -2,19 +2,13 @@ import "./EasyModale.css";
 import React, { useState, useEffect } from "react";
 
 export default function EasyModale(props) {
-  // Animation texte defile de gauche a droite
-  // Animation texte apparait
+  // Animation texte apparait = animated1
   const [animatedClass, setAnimatedClass] = useState("");
-  // Animation texte taper au clavier
+  // Animation texte taper au clavier = animated2
   const [currentText, setCurrentText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTyping, setIsTyping] = useState(false);
-
-  // useEffect(() => {
-  //   if (props.animated1) {
-  //     setAnimatedClass("modale-text-animated");
-  //   }
-  // }, [props.animated1]);
+  // Animation texte defile de gauche a droite = animated3
 
   useEffect(() => {
     if (props.animated1) {
@@ -38,6 +32,7 @@ export default function EasyModale(props) {
     }
   }, [props.isOpen, props.animated2, props.text]);
 
+  // For animated2
   const startTyping = () => {
     setIsTyping(true);
     const text = props.text || "";
@@ -60,6 +55,31 @@ export default function EasyModale(props) {
     }, typingSpeed);
   };
 
+  // CustomStyle
+  const modaleStyle = {
+    backgroundColor: props.modalBackgroundColor,
+    border: props.modalBorder || "none",
+    borderRadius: props.modalBorderRadius || "5px",
+    padding: props.modalPadding || "20px",
+    width: props.modalWidth,
+    height: props.modalHeight || "auto",
+    position: "fixed",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    zIndex: 9999,
+    ...props.modaleStyle,
+  };
+
+  const textStyle = {
+    color: props.textColor,
+    fontFamily: props.fontFamily || "sans-serif",
+    fontSize: props.fontSize || "16px",
+    fontWeight: props.fontWeight || "normal",
+    lineHeight: props.lineHeight || "1.5",
+    ...props.textStyle,
+  };
+
   return (
     <>
       {props.isOpen && (
@@ -68,6 +88,7 @@ export default function EasyModale(props) {
             className={`modale-content ${
               props.animated3 ? "modale-text-scroll" : ""
             }`}
+            style={modaleStyle}
           >
             <div className="modale-close" onClick={props.closeModal}>
               X
@@ -77,8 +98,9 @@ export default function EasyModale(props) {
                 isTyping ? "modale-text-typing" : ""
               } `}
               data-text={props.text}
+              style={textStyle}
             >
-              <span>{currentText}</span>
+              <span>{props.text}</span>
             </div>
           </div>
         </div>

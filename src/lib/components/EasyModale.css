@@ -140,38 +140,46 @@
   display: inline-block;
   white-space: nowrap;
   top: 0;
+  left: 0;
 }
-/* 
+
 .modale-content.modale-text-scroll div span {
   animation: defilement 10s infinite linear;
 }
 
-.modale-content.modale-text-scroll div:after {
-  position: absolute;
+/* .modale-content.modale-text-scroll div:after {
+  color: red;
+  display: inline-block;
+
   top: 0;
-  left: 0;
+  right: 0;
   content: attr(data-text);
   animation: defilement2 10s infinite linear;
+  animation-delay: 2s;
 } */
 
-/* @keyframes defilement {
+@keyframes defilement {
   0% {
-    margin-left: 0;
+    -webkit-transform: translate(0);
+    transform: translate(0);
   }
   100% {
-    margin-left: -100%;
+    -webkit-transform: translate(-100%);
+    transform: translate(-100%);
   }
 }
 
 @keyframes defilement2 {
   0% {
-    margin-left: 100%;
+    -webkit-transform: translate(0);
+    transform: translate(0);
   }
   100% {
-    margin-left: 0%;
+    -webkit-transform: translate(-100%);
+    transform: translate(-100%);
   }
 }
-
+/* 
 .modale-content.modale-text-scroll {
   position: relative;
   overflow: hidden;
@@ -181,31 +189,5 @@
   position: absolute;
   display: inline-block;
   white-space: nowrap;
-} */
-
-.modale-content.modale-text-scroll span:first-of-type {
-  animation: scroll-left 10s linear infinite;
 }
-
-.modale-content.modale-text-scroll span:last-of-type {
-  left: 100%;
-  animation: scroll-right 10s linear infinite;
-}
-
-@keyframes scroll-left {
-  from {
-    left: 0;
-  }
-  to {
-    left: -100%;
-  }
-}
-
-@keyframes scroll-right {
-  from {
-    left: 100%;
-  }
-  to {
-    left: 0;
-  }
-}
+ */

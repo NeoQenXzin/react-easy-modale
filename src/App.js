@@ -16,8 +16,10 @@ function App() {
       <EasyModale
         text="Mon texte long doit s'afficher entierement jusqu'a ce mot fin"
         isOpen={isModalOpen}
-        animated3
+        animated1
         closeModal={closeModal}
+        textColor="blue"
+        fontSize="30px"
       />
       <button onClick={() => show()}>show</button>
     </div>
