@@ -1,13 +1,13 @@
 {
   "name": "react-easy-modale",
-  "description": "A modale easy to use",
+  "description": "A modale easy to use with custom options",
   "author": "qenxzin",
   "keywords": [
     "react",
     "components",
     "modale"
   ],
-  "version": "0.1.1",
+  "version": "0.2.1",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.js",
