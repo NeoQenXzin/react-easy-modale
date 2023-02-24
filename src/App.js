@@ -20,6 +20,7 @@ function App() {
         closeModal={closeModal}
         textColor="blue"
         fontSize="30px"
+        modalBorder="5px solid grey"
       />
       <button onClick={() => show()}>show</button>
     </div>

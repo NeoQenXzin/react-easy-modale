@@ -101,6 +101,7 @@ function EasyModale(props) {
   }, "X"), /*#__PURE__*/_react.default.createElement("div", {
     className: "modale-text ".concat(animatedClass, " ").concat(isTyping ? "modale-text-typing" : "", " "),
     "data-text": props.text,
-    style: textStyle
+    style: textStyle,
+    "data-testid": "modal-text"
   }, /*#__PURE__*/_react.default.createElement("span", null, props.text)))));
 }

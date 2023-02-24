@@ -57,11 +57,11 @@ export default function EasyModale(props) {
 
   // CustomStyle
   const modaleStyle = {
-    backgroundColor: props.modalBackgroundColor,
+    backgroundColor: props.modalBackgroundColor || "white",
     border: props.modalBorder || "none",
     borderRadius: props.modalBorderRadius || "5px",
     padding: props.modalPadding || "20px",
-    width: props.modalWidth,
+    width: props.modalWidth || "auto",
     height: props.modalHeight || "auto",
     position: "fixed",
     top: "50%",
@@ -72,9 +72,9 @@ export default function EasyModale(props) {
   };
 
   const textStyle = {
-    color: props.textColor,
+    color: props.textColor || "black",
     fontFamily: props.fontFamily || "sans-serif",
-    fontSize: props.fontSize || "16px",
+    fontSize: props.fontSize || "20px",
     fontWeight: props.fontWeight || "normal",
     lineHeight: props.lineHeight || "1.5",
     ...props.textStyle,
@@ -89,6 +89,7 @@ export default function EasyModale(props) {
               props.animated3 ? "modale-text-scroll" : ""
             }`}
             style={modaleStyle}
+            data-testid="modal"
           >
             <div className="modale-close" onClick={props.closeModal}>
               X
@@ -99,6 +100,7 @@ export default function EasyModale(props) {
               } `}
               data-text={props.text}
               style={textStyle}
+              data-testid="modal-text"
             >
               <span>{props.text}</span>
             </div>
